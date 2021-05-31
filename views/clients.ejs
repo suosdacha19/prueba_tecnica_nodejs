@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Pratice Pharmasan</title>
+
+    <!-- Estilos -->
+    <link rel='stylesheet' href='resources/css/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+</head>
+<body>
+    <div class="titulo-h1">
+        <span>Client list of Pharmasan</span>
+        <a href="/create/clients" class="button">Add client</a>
+    </div>
+    <div class="tabla-css">
+        <table id="users">
+            <thead>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ID DOCUMENT</th>
+                <th>EMAIL</th>
+                <th>ADDRESS</th>
+                <th>ACTIONS</th>
+            </thead>
+            <tbody>
+                <% results.forEach((client) => { %>
+                    <tr>
+                        <td><%= client.id %></td>
+                        <td><%= client.name %></td>
+                        <td><%= client.id_document %></td>
+                        <td><%= client.email %></td>
+                        <td><%= client.address %></td>
+                        <td>
+                            <a href="/edit/<%= client.id %>" class="action"><i class="fas fa-edit"></i></a>
+                            <a href="/delete/<%= client.id %>" class="action"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#users').DataTable();
+        });
+    </script>
+</body>
+</html>

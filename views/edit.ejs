@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Pratice Pharmasan</title>
+    <link rel='stylesheet' href='../resources/css/style.css'>
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+</head>
+<body>
+    <% if (data) { %>
+        <% if (type === "users") { %>
+            <div class="register-form">
+                <h1>Edit User</h1>
+                <form action="/update/users" method="POST">
+                    <input id="id" name="id" value="<%= data.id %>" hidden>
+                    <label for="user">Username</label>
+                    <input type="text" name="user" id="user" value="<%= data.user %>" tabindex="1" required>
+
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" value="<%= data.name %>" tabindex="2" required>
+
+                    <label for="rol">Rol</label>
+                    <select name="rol" id="rol" class="select-css" tabindex="3">
+                        <option <%= data.role==='administrator' ? 'selected' : '' %> value="administrator">Administrator</option>
+                        <option <%= data.role==='seller' ? 'selected' : '' %> value="seller">Seller</option>
+                    </select>
+
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" id="pass" value="<%= data.pass %>" tabindex="4" required>
+
+                    <div>
+                        <input type="submit" class="btn-save" tabindex="5" value="Save">
+                        <a href="/users" class="btn-cancel">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        <% } %>
+        <% if (type === "clients") { %>
+            <div class="register-form">
+                <h1>Edit Client</h1>
+                <form action="/update/clients" method="POST">
+                    <input id="id" name="id" value="<%= data.id %>" hidden>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="<%= data.name %>" tabindex="1" required>
+        
+                    <label for="id_document">Id document</label>
+                    <input type="text" name="id_document" id="id_document" value="<%= data.id_document %>" tabindex="2" required>
+        
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="<%= data.email %>" tabindex="3" required>
+        
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" value="<%= data.address %>" tabindex="4" required>
+
+                    <div>
+                        <input type="submit" class="btn-save" tabindex="5" value="Save">
+                        <a href="/clients" class="btn-cancel">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        <% } %>
+    <% } %>
+</body>
+</html>
