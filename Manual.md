@@ -10,7 +10,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Que cosas necesitas para instalar la app_
 
 ```
 1. Software de gestion de datos para MySql
@@ -19,21 +19,11 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+_Una vez tengas instalado el software necesario_
+_El primer paso es importar la bd adjunta como pharmasan.sql_
+_El segundo paso es abrir la carpeta raiz del proyecto_
+_En el tercer paso debemos abrir la terminal de vsc, digitamos "nodemon app" y generara un link el cual podremos abrir en el navegador para ver la app_
+_Para finalizar el usuario base administrador es user: a, pass: a; con este usuario podremos ingresar a la app y crear mas usuarios con los diferentes roles_
 
 ## Autores ✒️
 
