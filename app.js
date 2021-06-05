@@ -137,10 +137,7 @@ app.get('/', (req, res) => {
     if(req.session.loggedIn){
         res.redirect('/dashboard')
     }else{
-        res.render('index', {
-            login: false,
-            name: 'You must log in!'
-        })
+        res.render('login')
     }
 })
 

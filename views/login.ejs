@@ -9,13 +9,14 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <h2>Login con Node JS</h2>
     <div class="login-form">
+        <h1>Login</h1>
         <form action="auth" method="POST">
             <input type="text" name="user" id="user" placeholder="User">
             <input type="password" name="pass" id="pass" placeholder="Password">
             <input type="submit" class="btn-login" value="Login">
         </form>
+
     </div>
 
     <% if(typeof alert != "undefined") { %>
