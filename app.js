@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 
-//Seteamos urlencoded para capturar datos 
+//Seteamos urlencoded para capturar datos
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
@@ -214,6 +214,19 @@ app.get('/reports', (req, res) => {
     if(req.session.loggedIn){
         req.session.page_name = "reports";
         res.render('reports', {
+            name: req.session.name,
+            rol: req.session.rol,
+            page_name: req.session.page_name
+        })
+    }else{
+        res.redirect('/login')
+    }
+})
+
+app.get('/profile', (req, res) => {
+    if(req.session.loggedIn){
+        req.session.page_name = "profile";
+        res.render('profile', {
             name: req.session.name,
             rol: req.session.rol,
             page_name: req.session.page_name

@@ -4,6 +4,7 @@
     <% if (rol === "administrator") { %> <a href="users" <% if (page_name === "users") { %>class="active" <% } %> >Users</a> <% } %>
     <a href="/clients" <% if (page_name === "clients") { %>class="active" <% } %> >Clients</a>
     <a href="/reports" <% if (page_name === "reports") { %>class="active" <% } %> >Reports</a>
+    <a href="/profile" <% if (page_name === "profile") { %>class="active" <% } %> >Profile</a>
     <a href="/logout" class="a-logout">Logout</a>
     <span class="user"><%= name %> (<%= rol %>)</span>
 </div>
